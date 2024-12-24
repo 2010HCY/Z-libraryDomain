@@ -11,6 +11,7 @@ Z-library官方网址：
    https://z-lib.bz/
    https://z-lib.fo/
    https://1lib.sk/
+   https://cnlib.icu/
 志愿者搭建的镜像：
    https://lib.openzlib.link/
    https://lib.opendelta.org/

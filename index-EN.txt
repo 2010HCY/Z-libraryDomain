@@ -11,6 +11,7 @@ spare：
    https://z-lib.bz/
    https://z-lib.fo/
    https://1lib.sk/
+   https://cnlib.icu/
 Mirror built by volunteers：
    https://lib.openzlib.link/
    https://lib.opendelta.org/
