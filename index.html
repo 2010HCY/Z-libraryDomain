@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-library可用域名跳转</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f7f8fa;
+            color: #333;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 2s linear infinite;
+            margin: 10px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Z-library</h1>
+        <button id="checkDomainsBtn">重新加载</button>
+        <p id="status">正在加载，请稍等...</p>
+        <div class="loader" id="loader" style="display:none;"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const supportEmail = 'support@z-lib.do';
+
+            const domainsChecker = {
+                stop: false,
+                checkDomainTimeout: 15, 
+                checkInParts: 5,
+                checkInPartsDelay: 7, 
+                processes: {
+                    list: {},
+                    add: (domain) => {
+                        domainsChecker.processes.list[domain] = 'start';
+                    },
+                    setAsCompleted: (domain) => {
+                        if (domainsChecker.processes.list[domain]) {
+                            domainsChecker.processes.list[domain] = 'completed';
+                        }
+                    },
+                    clear: () => {
+                        domainsChecker.processes.list = {};
+                    },
+                    isEmpty: () => {
+                        return !Object.values(domainsChecker.processes.list).includes('start');
+                    }
+                },
+                results: {
+                    availableDomain: null,
+                },
+                run: (callback) => {
+                    if (domainsChecker.stop) {
+                        return;
+                    }
+
+                    domainsChecker.processes.clear();
+                    let domainsOriginal = ['https://your-backend-api.com/check-domains'];
+
+                    let domainsPart;
+                    let counter = 0;
+                    while (domainsPart = domainsOriginal.splice(0, domainsChecker.checkInParts)) {
+                        if (!domainsPart.length) break;
+                        setTimeout((list) => {
+                            list.forEach(domain => {
+                                domainsChecker.checkDomain(domain, (isAvailable) => {
+                                    if (domainsChecker.stop) return;
+                                    if (!isAvailable && domainsChecker.processes.isEmpty()) {
+                                        callback(domainsChecker.results);
+                                    }
+                                    if (isAvailable && !domainsChecker.results.availableDomain) {
+                                        domainsChecker.stop = true;
+                                        domainsChecker.results.availableDomain = domain;
+                                        callback(domainsChecker.results);
+                                    }
+                                });
+                            });
+                        }, counter * domainsChecker.checkInPartsDelay * 1000, Array.from(domainsPart));
+                        counter += 1;
+                    }
+                },
+                checkDomain: (domain, callback) => {
+                    if (domainsChecker.stop) return;
+                    $.ajax({
+                        url: domain,
+                        timeout: domainsChecker.checkDomainTimeout * 1000,
+                        crossDomain: true,
+                        success: (data) => {
+                            callback(data.availableDomain ? true : false);
+                        },
+                        error: () => {
+                            callback(false);
+                        }
+                    });
+                },
+                processResult: (result) => {
+                    const availableDomain = domainsChecker.results.availableDomain;
+                    if (availableDomain) {
+                        window.location.href = availableDomain; 
+                    } else {
+                        $('#status').text("找不到可用域，点击按钮重试或联系我们: " + supportEmail);
+                        $('#checkDomainsBtn').show();  
+                        $('#loader').hide(); 
+                    }
+                }
+            };
+
+            $('#status').text("加载中... 请稍等");
+            domainsChecker.run(domainsChecker.processResult);
+
+            $('#checkDomainsBtn').click(function() {
+                $('#status').text("加载中... 请稍等");
+                $('#loader').show();
+                $(this).hide();
+                domainsChecker.run(domainsChecker.processResult);
+            });
+
+            $('#checkDomainsBtn').hide();
+        });
+    </script>
+</body>
+</html>
