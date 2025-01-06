@@ -2,16 +2,20 @@
 
 Z-library官方网址：
 
-   https://zh.z-lib.nz/
+**https://zh.z-lib.nz/**
+
 备用：
-   https://zh.z-lib.fm/
-   https://z-lib.gs/
-   https://z-library.sk/
-   https://z-lib.gd/
+
+- https://zh.z-lib.fm/
+- https://z-lib.gs/
+- https://z-library.sk/
+- https://z-lib.gd/
+
 志愿者搭建的镜像：
-   https://lib.openzlib.link/
-   https://lib.opendelta.org/
-   https://zh.zlib-book.top/
+
+- https://lib.openzlib.link/
+- https://lib.opendelta.org/
+- https://zh.zlib-book.top/
 
 最新地址跳转：
 
@@ -26,29 +30,30 @@ Tor：http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion
 
 **诈骗站**：
 
-   https://z-lib.id/
-   https://z-lib.io/      
-   https://zlibrary.to/
-   https://z-lib.is/
-   https://zlibis.com/
-   https://z-lib.ai/
-   https://z-lib.club/
-   https://z-lib.dev/
-   https://z-lib.ink/
-   https://z-lib.li/
-   https://z-lib.nl/
-   https://z-lib.wiki/
-   https://z-lib.ws/
-   https://zlib-official.com/
-   https://go-to-zlibrary.com/
-   https://zlibrary-global.com/
-   https://z-library-proxy.com/
-   https://z-lib.lol/
-   https://zlibrary.lol/
-   https://z-library.live/
-   https://z-library.help/
-   https://z-library.wiki/
-   https://z-library.blog/
+1. https://z-lib.id/
+
+2. https://z-lib.io/
+3. https://zlibrary.to/
+4. https://z-lib.is/
+5. https://zlibis.com/
+6. https://z-lib.ai/
+7. https://z-lib.club/
+8. https://z-lib.dev/
+9. https://z-lib.ink/
+10. https://z-lib.li/
+11. https://z-lib.nl/
+12. https://z-lib.wiki/
+13. https://z-lib.ws/
+14. https://zlib-official.com/
+15. https://go-to-zlibrary.com/
+16. https://zlibrary-global.com/
+17. https://z-library-proxy.com/
+18. https://z-lib.lol/
+19. https://zlibrary.lol/
+20. https://z-library.live/
+21. https://z-library.help/
+22. https://z-library.wiki/
+23. https://z-library.blog/
 
 防骗指南：
 
