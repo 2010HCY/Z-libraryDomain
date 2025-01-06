@@ -1,0 +1,59 @@
+# Z-library地址
+
+Z-library官方网址：
+
+   https://zh.z-lib.nz/
+备用：
+   https://zh.z-lib.fm/
+   https://z-lib.gs/
+   https://z-library.sk/
+   https://z-lib.gd/
+志愿者搭建的镜像：
+   https://lib.openzlib.link/
+   https://lib.opendelta.org/
+   https://zh.zlib-book.top/
+
+最新地址跳转：
+
+https://zlib.100713.xyz/
+
+https://zlib.Ethaniel.us.kg/
+
+Tor：http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion
+
+以下为一些无耻的模仿Z-library的诈骗网站，它们模仿Z-library的页面， 利用人们对自由知识的渴望敛财，并且在背后攻击真正的Z-library
+以下的是诈骗站！！！
+
+**诈骗站**：
+
+   https://z-lib.id/
+   https://z-lib.io/      
+   https://zlibrary.to/
+   https://z-lib.is/
+   https://zlibis.com/
+   https://z-lib.ai/
+   https://z-lib.club/
+   https://z-lib.dev/
+   https://z-lib.ink/
+   https://z-lib.li/
+   https://z-lib.nl/
+   https://z-lib.wiki/
+   https://z-lib.ws/
+   https://zlib-official.com/
+   https://go-to-zlibrary.com/
+   https://zlibrary-global.com/
+   https://z-library-proxy.com/
+   https://z-lib.lol/
+   https://zlibrary.lol/
+   https://z-library.live/
+   https://z-library.help/
+   https://z-library.wiki/
+   https://z-library.blog/
+
+防骗指南：
+
+  1. 真正的官方首页logo下有防骗横幅
+  2. 官方首页拖动到底下有社交媒体链接，有中国电报群
+  3. 官方logo**有白底**，诈骗站没有
+  4. 官方网站**没有Cloudflare**！出现Cloudflare人机验证的是**假的**！
+  5. 官方不卖**终身会员**！
